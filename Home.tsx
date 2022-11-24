@@ -31,13 +31,6 @@ const columns: readonly Column[] = [
     align: 'right',
     // format: (value: number) => value.toLocaleString('en-US'),
   },
-  {
-    id: 'density',
-    label: 'Density',
-    minWidth: 170,
-    align: 'right',
-    // format: (value: number) => value.toFixed(2),
-  },
 ];
 
 interface Data {

@@ -37,12 +37,21 @@ export default function StickyHeadTable({
     setPage(0);
   };
 
+  const testEdit = (data: any) => {
+    console.log(data);
+  };
+
+  const testDelete = (data: any) => {
+    console.log(data);
+  };
+
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
+              <TableCell>Action</TableCell>
               {columns.map((column, index) => (
                 <TableCell
                   key={column.id}
@@ -60,6 +69,10 @@ export default function StickyHeadTable({
               .map((row) => {
                 return (
                   <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                    <TableCell>
+                      <button onClick={() => testEdit(row)}>Edit</button>
+                      <button onClick={() => testDelete(row)}>Delete</button>
+                    </TableCell>
                     {columns.map((column, index) => {
                       const value = row[column.id];
                       return (
